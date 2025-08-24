@@ -1,0 +1,94 @@
+@import "./theme.scss";
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--navbar-padding);
+    z-index: 1100;
+    max-width: 100vw;
+    padding: 5px 20px;
+}
+
+.logo {
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--navbar-text);
+}
+
+.leftSection {
+    display: flex;
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+}
+
+.cartContainer {
+    position: relative;
+    text-decoration: none;
+}
+
+.cartBadge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--cart-badge-bg);
+    color: var(--navbar-text);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.navLink {
+    margin-right: 20px;
+}
+
+.navLink a {
+    color: var(--navbar-text);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition: color 0.3s ease;
+}
+
+.navLink a:hover {
+    color: var(--navbar-hover);
+}
+
+@media (max-width: 400px) {
+    .navbar {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .leftSection {
+        gap: 5px;
+    }
+
+    .rightSection {
+        margin-top: 5px;
+    }
+
+    .cartContainer {
+        display: flex;
+        align-items: center;
+    }
+
+    .cartBadge {
+        top: -3px;
+        right: -5px;
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap");
+
+:root {
+    /* Base Colors */
+    --primary-color: #333;
+    --secondary-color: #555;
+    --background-color: #fff;
+    --card-background: #f9f9f9;
+    --accent-color: #007bff;
+    --action-color: #28a745;
+    --success-color: #4caf50;
+    --error-color: red;
+    --border-color: #ddd;
+    --hover-color: #444;
+    --navbar-bg: #333;
+    --navbar-text: white;
+    --navbar-hover: #f4b400;
+    --cart-badge-bg: red;
+    --header-bg: #222;
+    --footer-bg: #222;
+
+    /* Typography */
+    --text-color: #222;
+    --text-light: #666;
+    --font-primary: "Roboto", sans-serif;
+    --font-size-base: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+
+    /* Buttons */
+    --button-bg: var(--action-color);
+    --button-text: #fff;
+    --button-hover: #0056b3;
+    --button-border-radius: 5px;
+    --button-padding: 10px 20px;
+
+    /* Borders & Shadows */
+    --border-radius: 8px;
+    --border-radius-small: 5px;
+    --border: 1px solid var(--border-color);
+    --border-hover: 2px solid black;
+    --shadow-light: 0 3px 6px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+    /* Layout */
+    --max-width: 600px;
+    --padding: 20px;
+
+    /* Form Fields */
+    --input-padding: 8px;
+    --input-border: 1px solid #ccc;
+
+    /* Cart & Checkout Colors */
+    --checkout-button-bg: #000;
+    --checkout-button-text: #fff;
+    --checkout-button-hover: #222;
+    --remove-button-bg: #ff4d4d;
+    --remove-button-hover: #cc0000;
+}

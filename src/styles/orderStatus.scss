@@ -1,0 +1,75 @@
+@import "./theme.scss";
+
+.order-status-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+
+    h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: 15px;
+        color: var(--primary-color);
+    }
+
+    p {
+        font-size: var(--font-size-base);
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+    }
+
+    .order-summary {
+        background: var(--card-background);
+        padding: 15px;
+        border-radius: var(--border-radius);
+        margin-top: 20px;
+        text-align: left;
+
+        h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                background: var(--background-color);
+                padding: 10px;
+                margin: 8px 0;
+                border-radius: var(--border-radius-small);
+                box-shadow: var(--shadow-light);
+            }
+        }
+    }
+
+    .error-message {
+        color: var(--error-color);
+        font-weight: 600;
+    }
+
+    .return-button {
+        margin-top: 20px;
+        padding: var(--button-padding);
+        font-size: var(--font-size-lg);
+        background: var(--button-bg);
+        color: var(--button-text);
+        border: none;
+        border-radius: var(--button-border-radius);
+        cursor: pointer;
+
+        &:hover {
+            background: var(--button-hover);
+        }
+    }
+}

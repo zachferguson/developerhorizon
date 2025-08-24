@@ -1,0 +1,47 @@
+@import "./theme.scss";
+
+.product-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-medium);
+    border: var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensures all cards are the same height */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-small);
+    object-fit: cover;
+}
+
+.product-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card h3 {
+    color: var(--text-color);
+    margin-top: 10px;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.product-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.product-card:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(0, 0, 0, 0.2);
+}

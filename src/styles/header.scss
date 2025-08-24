@@ -1,0 +1,11 @@
+@import "./theme.scss";
+
+.header {
+    background-color: var(--header-bg);
+    color: var(--navbar-text);
+    padding: 15px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1001;
+    max-width: 100vw;
+}

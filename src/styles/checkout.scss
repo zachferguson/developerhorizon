@@ -1,0 +1,51 @@
+@import "./theme.scss";
+
+.checkout-page {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: var(--padding);
+    text-align: center;
+}
+
+.checkout-section {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input,
+select {
+    width: 100%;
+    padding: var(--input-padding);
+    margin: 5px 0;
+    border: var(--input-border);
+    border-radius: var(--border-radius-small);
+}
+
+button.checkout-button {
+    width: 100%;
+    padding: var(--button-padding);
+    font-size: var(--font-size-lg);
+    background-color: var(--checkout-button-bg);
+    color: var(--checkout-button-text);
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--checkout-button-hover);
+    }
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+
+    input {
+        width: 50px;
+    }
+}
+
+.terms-link {
+    text-decoration: underline;
+    color: var(--primary-color);
+}

@@ -1,0 +1,80 @@
+@import "./theme.scss";
+
+.product-details {
+    text-align: center;
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Layout for image + options */
+.product-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows it to stack on smaller screens */
+}
+
+/* Image */
+.product-image img {
+    max-width: 350px;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+/* Options container */
+.product-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 350px;
+}
+
+/* Quantity selector */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-selector input {
+    width: 40px;
+    text-align: center;
+}
+
+/* Color & Size options */
+.color-options,
+.size-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.color-option,
+.size-option {
+    padding: 10px;
+    border-radius: var(--border-radius-small);
+    border: var(--border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-option.selected,
+.size-option.selected {
+    border: var(--border-hover);
+}
+
+/* Description */
+.product-description {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,33 @@
+@import "./theme.scss";
+
+/* Products Page */
+.productsPage {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Toggle Button */
+.toggleFilterButton {
+    background-color: var(--primary-color);
+    color: var(--button-text);
+    border: none;
+    padding: var(--button-padding);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    margin-bottom: 10px;
+    border-radius: var(--button-border-radius);
+    transition: background 0.3s ease-in-out;
+}
+
+.toggleFilterButton:hover {
+    background-color: var(--hover-color);
+}
+
+/* Tag Filter */
+.tagFilter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
