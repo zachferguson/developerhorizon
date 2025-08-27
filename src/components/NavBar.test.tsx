@@ -1,4 +1,3 @@
-// src/components/Navbar.test.tsx
 import { describe, it, expect, beforeEach, vi, type Mock } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";

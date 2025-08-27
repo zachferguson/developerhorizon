@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import { store } from "./store/store.ts";
+import { store } from "./store/store";
 import "./index.css";
-import App from "./App.tsx";
+import App from "./App";
 import "./styles/theme.scss";
 import "./styles/global.scss";
 
