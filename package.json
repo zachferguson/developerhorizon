@@ -10,6 +10,7 @@
         "lint": "eslint .",
         "preview": "vite preview",
         "test": "vitest run --coverage",
+        "coverage": "vitest run --coverage",
         "test:watch": "vitest --watch",
         "test:fast": "vitest",
         "test:ui": "vitest --ui",
