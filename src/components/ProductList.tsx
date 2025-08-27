@@ -14,7 +14,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
                     gridTemplateColumns:
                         "repeat(auto-fill, minmax(200px, 1fr))",
                     gap: "16px",
-                    alignItems: "stretch", // ✅ Ensures all items stretch to the same height
+                    alignItems: "stretch", // Ensures all items stretch to the same height
                 }}
             >
                 {products.map((product) => (

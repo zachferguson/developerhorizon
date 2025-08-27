@@ -9,10 +9,11 @@
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "test": "vitest run",
-        "test:watch": "vitest",
+        "test": "vitest run --coverage",
+        "test:watch": "vitest --watch",
+        "test:fast": "vitest",
         "test:ui": "vitest --ui",
-        "coverage": "vitest run --coverage"
+        "coverage:watch": "vitest --coverage --watch"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.5.1",
