@@ -139,7 +139,6 @@ describe("<CheckoutForm />", () => {
 
         await waitFor(() => expect(createOrder).toHaveBeenCalledTimes(1));
 
-        // 👇 Vitest-typed calls
         const createOrderMock = createOrder as MockedFunction<
             typeof createOrder
         >;
@@ -185,7 +184,6 @@ describe("<CheckoutForm />", () => {
         await userEvent.click(screen.getByRole("button", { name: /pay now/i }));
         await waitFor(() => expect(createOrder).toHaveBeenCalled());
 
-        // 👇 Vitest-typed calls
         const createOrderMock = createOrder as MockedFunction<
             typeof createOrder
         >;
@@ -193,5 +191,64 @@ describe("<CheckoutForm />", () => {
 
         expect(orderData.shipping_method).toBe(1);
         expect(orderData.shipping_cost).toBe(0);
+    });
+
+    it("falls back to a generic error message when Stripe error has no message", async () => {
+        // Stripe returns an error object but with no `message`
+        mockStripe = {
+            confirmPayment: vi.fn().mockResolvedValue({ error: {} }),
+        };
+        mockElements = {};
+
+        renderForm();
+        const btn = screen.getByRole("button", { name: /pay now/i });
+        expect(btn).not.toBeDisabled();
+
+        await userEvent.click(btn);
+
+        // Fallback copy should be shown
+        expect(
+            await screen.findByText(/an unknown error occurred/i)
+        ).toBeInTheDocument();
+
+        // No order should be created and no redirect should occur
+        expect(createOrder).not.toHaveBeenCalled();
+        expect(hrefStore).toBe("http://localhost/");
+    });
+
+    it("shows an error if order submission fails after payment succeeds", async () => {
+        mockStripe = {
+            confirmPayment: vi.fn().mockResolvedValue({
+                paymentIntent: {
+                    id: "pi_ok",
+                    status: "succeeded",
+                    amount: 4242,
+                },
+            }),
+        };
+        mockElements = {};
+
+        // Force createOrder to fail
+        const createOrderMock = createOrder as MockedFunction<
+            typeof createOrder
+        >;
+        createOrderMock.mockRejectedValueOnce(new Error("Service down"));
+
+        renderForm();
+
+        await userEvent.click(screen.getByRole("button", { name: /pay now/i }));
+
+        // We attempted to create the order…
+        await waitFor(() => expect(createOrderMock).toHaveBeenCalledTimes(1));
+
+        // …but show an error instead of redirecting
+        expect(
+            await screen.findByText(
+                /payment succeeded, but order submission failed/i
+            )
+        ).toBeInTheDocument();
+
+        // No redirect on failure
+        expect(hrefStore).toBe("http://localhost/");
     });
 });
