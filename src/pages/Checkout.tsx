@@ -337,6 +337,7 @@ const Checkout = ({
                         <span
                             className="terms-link"
                             onClick={(e) => {
+                                e.preventDefault();
                                 e.stopPropagation(); // Prevents checkbox from being toggled when clicking the link
                                 openModal(
                                     <div>

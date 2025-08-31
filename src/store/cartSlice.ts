@@ -34,7 +34,7 @@ const cartSlice = createSlice({
                 state.items.push(action.payload);
             }
 
-            localStorage.setItem("cart", JSON.stringify(state.items)); // ✅ Persist changes
+            localStorage.setItem("cart", JSON.stringify(state.items)); // Persist changes
         },
 
         removeFromCart: (
@@ -47,12 +47,12 @@ const cartSlice = createSlice({
                     item.variantId !== action.payload.variantId
             );
 
-            localStorage.setItem("cart", JSON.stringify(state.items)); // ✅ Persist updated cart
+            localStorage.setItem("cart", JSON.stringify(state.items)); // Persist updated cart
         },
 
         clearCart: (state) => {
             state.items = [];
-            localStorage.removeItem("cart"); // ✅ Completely clear storage
+            localStorage.removeItem("cart"); // Completely clear storage
         },
 
         updateQuantity: (
@@ -66,7 +66,7 @@ const cartSlice = createSlice({
                 item.quantity = action.payload.quantity;
             }
 
-            localStorage.setItem("cart", JSON.stringify(state.items)); // ✅ Persist changes
+            localStorage.setItem("cart", JSON.stringify(state.items)); // Persist changes
         },
     },
 });
