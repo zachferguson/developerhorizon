@@ -131,7 +131,7 @@ const OrderStatus = () => {
                         {enrichedOrderItems.map((item, index) => (
                             <div key={index} className="order-item">
                                 <img
-                                    src={item.image}
+                                    src={item.image ?? undefined}
                                     alt={item.title}
                                     className="order-item-image"
                                 />

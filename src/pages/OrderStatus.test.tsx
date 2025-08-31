@@ -321,7 +321,7 @@ describe("<OrderStatus />", () => {
 
         // Image fallback becomes empty string
         const img = screen.getByAltText("Mystery Thing") as HTMLImageElement;
-        expect(img.getAttribute("src")).toBe("");
+        expect(img).not.toHaveAttribute("src");
 
         // Variant fallback from item.variant_label, assert on parent <p>
         const variantP = screen.getByText(/variant:/i).closest("p")!;
