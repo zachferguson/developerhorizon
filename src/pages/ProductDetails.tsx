@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { RootState } from "../store/store";
 import DOMPurify from "dompurify";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, type ReactNode } from "react";
 import { addToCart } from "../store/cartSlice";
 import { toast } from "react-toastify";
 import "../styles/productDetails.scss";
@@ -11,7 +11,7 @@ import { Product } from "../types/product";
 const ProductDetails = ({
     openModal,
 }: {
-    openModal: (content: JSX.Element) => void;
+    openModal: (content: ReactNode) => void;
 }) => {
     const { productId } = useParams<{ productId: string }>();
     const dispatch = useDispatch();
@@ -118,12 +118,12 @@ const ProductDetails = ({
             <div className="product-content">
                 <div className="product-image">
                     <img
-                        src={selectedImageSrc}
+                        src={selectedImageSrc || undefined}
                         alt={product.title}
                         onClick={() =>
                             openModal(
                                 <img
-                                    src={selectedImageSrc}
+                                    src={selectedImageSrc || undefined}
                                     alt={product.title}
                                     className="modal-image"
                                 />

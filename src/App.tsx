@@ -13,14 +13,14 @@ import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
 import OrderStatus from "./pages/OrderStatus";
 import ProductDetails from "./pages/ProductDetails";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Modal from "./components/Modal";
 
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalContent, setModalContent] = useState<JSX.Element | null>(null);
+    const [modalContent, setModalContent] = useState<ReactNode | null>(null);
 
-    const openModal = (content: JSX.Element) => {
+    const openModal = (content: ReactNode) => {
         setModalContent(content);
         setIsModalOpen(true);
     };

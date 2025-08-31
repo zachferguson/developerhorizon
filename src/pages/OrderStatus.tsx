@@ -61,7 +61,7 @@ const OrderStatus = () => {
                 )?.src ||
                 product?.images.find((img) => img.is_default)?.src ||
                 product?.images[0]?.src ||
-                "";
+                undefined;
 
             return {
                 title: product?.title || item.title,

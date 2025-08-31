@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -33,7 +33,7 @@ vi.mock("./pages/OrderStatus", () => ({
 
 // Give ProductDetails/Checkout a way to trigger App.openModal
 vi.mock("./pages/ProductDetails", () => ({
-    default: ({ openModal }: { openModal: (c: JSX.Element) => void }) => (
+    default: ({ openModal }: { openModal: (c: ReactNode) => void }) => (
         <div data-testid="product-details">
             <button onClick={() => openModal(<div>PD Modal Content</div>)}>
                 Open Product Modal
@@ -42,7 +42,7 @@ vi.mock("./pages/ProductDetails", () => ({
     ),
 }));
 vi.mock("./pages/Checkout", () => ({
-    default: ({ openModal }: { openModal: (c: JSX.Element) => void }) => (
+    default: ({ openModal }: { openModal: (c: ReactNode) => void }) => (
         <div data-testid="checkout">
             <button
                 onClick={() => openModal(<div>Checkout Modal Content</div>)}

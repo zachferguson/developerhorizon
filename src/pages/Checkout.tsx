@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +24,7 @@ interface PaymentIntentResponse {
 const Checkout = ({
     openModal,
 }: {
-    openModal: (content: JSX.Element) => void;
+    openModal: (content: ReactNode) => void;
 }) => {
     const cartItems = useSelector((state: RootState) => state.cart.items);
     const navigate = useNavigate();

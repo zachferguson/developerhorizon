@@ -13,7 +13,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 to={`/product/${product.id}`}
                 style={{ textDecoration: "none" }}
             >
-                <img src={product.images?.[0]?.src} alt={product.title} />
+                <img
+                    src={product.images?.[0]?.src || undefined}
+                    alt={product.title}
+                />
                 <div className="product-card-content">
                     <h3>{product.title}</h3>
                     <p>
