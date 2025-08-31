@@ -11,12 +11,15 @@ export interface CartItem {
     quantity: number; // Quantity of item
 }
 
-interface CartState {
+export interface CartState {
     items: CartItem[];
 }
 
 const initialState: CartState = {
-    items: JSON.parse(localStorage.getItem("cart") || "[]"),
+    items:
+        typeof window !== "undefined"
+            ? JSON.parse(localStorage.getItem("cart") || "[]")
+            : [],
 };
 
 const cartSlice = createSlice({
