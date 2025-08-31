@@ -1,0 +1,42 @@
+name: CI - Build & Test
+
+on:
+    push: # run on every branch push
+        branches:
+            - "**"
+    workflow_dispatch: # still lets you trigger manually
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20.18.3
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build (if present)
+              run: npm run build --if-present
+              env:
+                  CI: true
+
+            - name: Run tests with coverage
+              run: npm run coverage
+              env:
+                  CI: true
+
+            - name: Upload coverage report
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: coverage-report
+                  path: coverage/**
+                  if-no-files-found: ignore
+                  retention-days: 7

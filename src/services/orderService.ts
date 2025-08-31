@@ -20,7 +20,7 @@ export const createOrder = async (
         );
         return response.data;
     } catch (error) {
-        console.error("❌ Error submitting order:", error);
+        console.error("Error submitting order:", error);
         throw new Error("Failed to submit order.");
     }
 };
@@ -36,7 +36,7 @@ export const getOrderStatus = async (
         });
         return response.data;
     } catch (error) {
-        console.error("❌ Error fetching order status:", error);
+        console.error("Error fetching order status:", error);
         throw new Error("Failed to fetch order status.");
     }
 };

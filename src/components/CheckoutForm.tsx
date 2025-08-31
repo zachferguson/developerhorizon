@@ -53,7 +53,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         });
 
         if (error) {
-            console.error("🔴 Stripe Error:", error);
+            console.error("Stripe Error:", error);
             setErrorMessage(error.message ?? "An unknown error occurred.");
             setLoading(false);
             return;
