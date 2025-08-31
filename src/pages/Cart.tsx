@@ -26,7 +26,7 @@ const Cart = () => {
                             <div key={item.variantId} className="cartItem">
                                 <img
                                     className="cartItemImage"
-                                    src={item.image}
+                                    src={item.image || undefined}
                                     alt={item.title}
                                 />
                                 <div className="cartItemData">

@@ -1,4 +1,4 @@
-import { STORE_NAME } from "../config";
+import { STORE_NAME, STORE_WELCOME } from "../config";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { useEffect, useState } from "react";
@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <div className="home-container">
             <h2>{`Welcome to ${STORE_NAME}`}</h2>
-            <p>High-quality apparel designed for tech enthusiasts.</p>
+            <p>{STORE_WELCOME}</p>
 
             {featuredProducts.length > 0 && (
                 <div className="featured-products">

@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { fetchAllProducts } from "../services/productService";
 import { Product } from "../types/product";
-import { RootState } from "./store";
+import type { RootState } from "./store";
 
-interface ProductsState {
+export interface ProductsState {
     products: Product[];
     status: "idle" | "loading" | "succeeded" | "failed";
     error: string | null;

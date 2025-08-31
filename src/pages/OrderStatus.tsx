@@ -61,7 +61,7 @@ const OrderStatus = () => {
                 )?.src ||
                 product?.images.find((img) => img.is_default)?.src ||
                 product?.images[0]?.src ||
-                "";
+                undefined;
 
             return {
                 title: product?.title || item.title,
@@ -131,7 +131,7 @@ const OrderStatus = () => {
                         {enrichedOrderItems.map((item, index) => (
                             <div key={index} className="order-item">
                                 <img
-                                    src={item.image}
+                                    src={item.image ?? undefined}
                                     alt={item.title}
                                     className="order-item-image"
                                 />
